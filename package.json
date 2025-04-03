@@ -10,7 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.8.4",
+    "file-saver": "^2.0.5",
     "framer-motion": "^12.6.3",
+    "jspdf": "^3.0.1",
     "lucide-react": "^0.487.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
