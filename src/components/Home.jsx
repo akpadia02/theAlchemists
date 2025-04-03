@@ -1,40 +1,60 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
+import { useDropzone } from "react-dropzone";
+import { motion } from "framer-motion";
+import { UploadCloud } from "lucide-react";
 
-const Home = () => {
-  const [image, setImage] = useState(null);
+const UploadOCRCard = () => {
+  const [files, setFiles] = useState([]);
 
-  const handleImageUpload = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      setImage(URL.createObjectURL(file));
-    }
+  const onDrop = useCallback((acceptedFiles) => {
+    setFiles(acceptedFiles);
+  }, []);
+
+  const handleCancel = () => {
+    setFiles([]);
   };
 
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+    accept: "image/*",
+    maxSize: 15 * 1024 * 1024,
+  });
+
   return (
-    <div className="flex flex-col items-center p-6 bg-gray-100 min-h-screen">
-      <h1 className="text-3xl font-bold text-gray-800 mb-4">Smart OCR: Handwritten Text Recognition</h1>
-      <p className="text-gray-600 text-center text-2xl max-w-4xl mb-6 mt-9">
-        Convert handwritten text from images into digital format with high accuracy. Our AI-powered OCR tool
-        supports multiple handwriting styles, enabling easy text editing and exporting.
+    <div className="relative flex flex-col items-center justify-center w-full max-w-2xl p-6 bg-white rounded-xl shadow-lg border border-gray-300 mx-auto mt-32">
+      <h1 className="text-xl font-semibold text-gray-800 text-center">Smart OCR: Handwritten Text Recognition</h1>
+      <p className="text-gray-600 text-sm mb-4 text-center">
+        Upload an image containing handwritten text, and our AI-powered system will extract and convert it into a digital format.
       </p>
-      
-      <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Upload Image</h2>
-        <div className="border-2 border-dashed border-gray-300 p-4 rounded-lg text-center cursor-pointer">
-          <input type="file" accept="image/*" onChange={handleImageUpload} className="hidden" id="fileInput" />
-          <label htmlFor="fileInput" className="block text-blue-500 cursor-pointer">
-            Click to upload or drag and drop
-          </label>
-          <p className="text-gray-500 text-sm">Max. File Size: 15MB</p>
+      <div
+        {...getRootProps()}
+        className="relative flex flex-col items-center justify-center w-full h-40 border-2 border-dashed border-gray-400 bg-gray-100 rounded-lg cursor-pointer hover:border-blue-500 transition p-4"
+      >
+        <input {...getInputProps()} />
+        <UploadCloud size={40} className="text-blue-500 mb-2" />
+        {isDragActive ? (
+          <p className="text-gray-700">Drop the file here...</p>
+        ) : (
+          <p className="text-gray-600">Click to upload or drag and drop</p>
+        )}
+        <p className="text-gray-500 text-xs mt-1">Max. File Size: 15MB</p>
+      </div>
+      {files.length > 0 && (
+        <div className="mt-4 w-full text-center">
+          <h2 className="text-gray-700 text-sm font-medium">Uploaded File:</h2>
+          <ul className="text-gray-600 text-sm">
+            {files.map((file) => (
+              <li key={file.name}>{file.name}</li>
+            ))}
+          </ul>
         </div>
-        {image && <img src={image} alt="Uploaded" className="mt-4 w-full rounded-lg" />}
-        <div className="flex justify-between mt-4">
-          <button className="bg-gray-300 px-4 py-2 rounded-lg">Cancel</button>
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-lg">Upload</button>
-        </div>
+      )}
+      <div className="flex gap-4 mt-4">
+        <button onClick={handleCancel} className="px-4 py-2 text-gray-700 bg-gray-200 rounded-md">Cancel</button>
+        <button className="px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700">Upload</button>
       </div>
     </div>
   );
 };
 
-export default Home;
+export default UploadOCRCard;
