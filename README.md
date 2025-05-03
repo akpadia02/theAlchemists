@@ -58,7 +58,7 @@ npm install
 npm run dev
 ```
 ### Team Alchemist
-- Aboli Patne
-- Akshay Padia
-- Khushi Mantri
-- Rashi Potey
+- [Aboli Patne](https://github.com/abolipatne01)
+- [Akshay Padia](https://github.com/akpadia02)
+- [Khushi Mantri](https://github.com/Kcode15)
+- [Rashi Potey](https://github.com/Rashipotey)
