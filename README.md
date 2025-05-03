@@ -57,3 +57,8 @@ python app.py
 npm install
 npm run dev
 ```
+### Team Alchemist
+- Aboli Patne
+- Akshay Padia
+- Khushi Mantri
+- Rashi Potey
