@@ -18,7 +18,7 @@ Extractify is a powerful and user-friendly tool that turns **handwritten notes i
 ##  Tech Stack
 
 - **Frontend**: React.js, Tailwind CSS  
-- **Backend**: Flask
+- **Backend**: Flask (Python)
 - **Image Preprocessing**: OpenCV 
 - **OCR Engine**: EasyOCR 
  
