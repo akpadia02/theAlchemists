@@ -4,10 +4,10 @@ Extractify is a powerful and user-friendly tool that turns **handwritten notes i
 
 ---
 
-## 🚀 Features
+## 🚀 Features of Extractify
 
-✅ Accurately converts even messy handwriting to digital text  
-✅ Works with various handwriting styles  
+✅ Accurately converts even messy handwriting to digital text
+✅ Works with various handwriting styles
 ✅ Built-in **grammar correction**  
 ✅ **Text-to-speech** support  
 ✅ Export notes in **TXT** or **PDF** format  
@@ -15,7 +15,7 @@ Extractify is a powerful and user-friendly tool that turns **handwritten notes i
 
 ---
 
-##  Tech Stack
+##  Tech Stack Used for Extractify
 
 - **Frontend**: React.js, Tailwind CSS  
 - **Backend**: Flask (Python)
@@ -27,7 +27,7 @@ Extractify is a powerful and user-friendly tool that turns **handwritten notes i
 
 ## 🔧 Installation Guide
 
-### 🔹 Clone the Repository
+### Clone the Repository
 
 ```bash
 git clone https://github.com/akpadia02/theAlchemists.git
