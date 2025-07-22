@@ -6,9 +6,9 @@ Extractify is a powerful and user-friendly tool that turns **handwritten notes i
 
 ## 🚀 Features of Extractify
 
-✅ Accurately converts even messy handwriting to digital text
-✅ Works with various handwriting styles
-✅ Built-in **grammar correction**  
+✅ Accurately converts even messy handwriting to digital text  
+✅ Works with various handwriting styles  
+✅ Built-in **grammar correction**   
 ✅ **Text-to-speech** support  
 ✅ Export notes in **TXT** or **PDF** format  
 ✅ Fast, lightweight, and browser-accessible  
@@ -19,8 +19,8 @@ Extractify is a powerful and user-friendly tool that turns **handwritten notes i
 
 - **Frontend**: React.js, Tailwind CSS  
 - **Backend**: Flask (Python)
-- **Image Preprocessing**: OpenCV 
-- **OCR Engine**: EasyOCR 
+- **Image Preprocessing**: OpenCV Library
+- **OCR Engine**: EasyOCR - Pretrained model
  
 
 ---
