@@ -140,11 +140,13 @@ import google.generativeai as genai
 app = Flask(__name__)
 CORS(app)
 
+
 UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-genai.configure(api_key="AIzaSyDDd57Upf2MkK-JvLpwprTesdN9GnGEdMY")  # Replace with actual API key
-model = genai.GenerativeModel("gemini-1.5-pro-latest")
+
+genai.configure(api_key="AIzaSyDgf1LxQlytvssi78N3HC8j9AW0JIdXJb8")  # Replace with actual API key
+model = genai.GenerativeModel("gemini-2.5-pro")
 
 last_extracted_text = "No extracted text yet."  # Store the last extracted text
 
